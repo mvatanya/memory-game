@@ -1,0 +1,38 @@
+html {
+  min-height: 100vh;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+.first-page {
+  background-color: #CD5C5C;
+  font-family: 'Press Start 2P', serif;
+  text-align: center; 
+  color: white;
+  padding-top: 1px;
+  height: 100vh;
+  min-height: 770px;
+}
+#first-line {
+  margin: 50px 0;
+  font-size: 100px;
+}
+#second-line {
+  margin: 50px 0;
+  font-size: 80px;
+}
+#third-line {
+  margin: 70px 0;
+  font-size: 60px;
+}
+#best-score {
+  margin: 150px 0 70px 0;
+  font-size: 30px
+}
+button {
+  font-size: 20px;
+  font-family: 'Press Start 2P', serif;
+  padding: 15px 32px;
+  color: #CD5C5C;
+}
