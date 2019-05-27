@@ -1,18 +1,20 @@
 window.addEventListener("DOMContentLoaded", () => {
     function drawTiles(){
-        // grab images container
         var imagesContainer = document.getElementById("images-container");
-        // create div and add a class called row
-        var rowDiv = document.createElement("div");
-        rowDiv.className = "row"
-        // append child
-        imagesContainer.appendChild(rowDiv);
-        var columnDiv = document.createElement("div");
-        columnDiv.className = "column"
-        rowDiv.appendChild(columnDiv);
-        var backImage = document.createElement("img");
-        backImage.className = "backImage";
-        columnDiv.appendChild(backImage);
+        for (var j = 0; j < 5; j++) {
+            var rowDiv = document.createElement("div");
+            rowDiv.className = "row" 
+            for (var i = 0; i < 5; i++){
+                var columnDiv = document.createElement("div");
+                columnDiv.className = "column"
+                var backImage = document.createElement("img");
+                backImage.className = "backImage";
+                // backImage.src = "back-imagesContainer.jpg";  
+                columnDiv.appendChild(backImage); 
+                rowDiv.appendChild(columnDiv);           
+            }
+            imagesContainer.appendChild(rowDiv);
+        }
     }
     drawTiles();
 })    
