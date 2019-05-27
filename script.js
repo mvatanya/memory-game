@@ -9,7 +9,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 columnDiv.className = "column"
                 var backImage = document.createElement("img");
                 backImage.className = "backImage";
-                // backImage.src = "back-imagesContainer.jpg";  
+                backImage.src = "back-image.jpg";  
                 columnDiv.appendChild(backImage); 
                 rowDiv.appendChild(columnDiv);           
             }

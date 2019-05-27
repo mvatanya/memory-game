@@ -46,9 +46,9 @@ button {
   justify-content: center;
 }
 #images-container {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 60%;
-  height: 95%;  
+  height: 100%;  
 }
 
 .row {
@@ -59,7 +59,11 @@ button {
 .column {
   flex: 20%;
   padding: 5px;
-  background-color: red;
+  /* background-color: red; */
   margin: 10px 40px;
 
+}
+.backImage {
+  width: 200px;
+  height: 250px
 }
