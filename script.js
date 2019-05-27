@@ -7,16 +7,26 @@ window.addEventListener("DOMContentLoaded", () => {
             for (var i = 0; i < 5; i++){
                 var columnDiv = document.createElement("div");
                 columnDiv.className = "column"
-                var backImage = document.createElement("img");
-                backImage.className = "backImage";
-                backImage.src = "back-image.jpg";  
-                columnDiv.appendChild(backImage); 
-                rowDiv.appendChild(columnDiv);           
+                if(j === 2 && i === 2){
+                    var countNum = document.createElement("span");
+                    countNum.className = "countNum";
+                    countNum.textContent = 0;
+                    columnDiv.appendChild(countNum);
+                } else {
+                    var backImage = document.createElement("img");
+                    backImage.className = "backImage";
+                    backImage.src = "back-image.jpg";  
+                    columnDiv.appendChild(backImage); 
+                }
+                rowDiv.appendChild(columnDiv); 
+          
             }
             imagesContainer.appendChild(rowDiv);
         }
     }
     drawTiles();
+
+
 })    
 
 
