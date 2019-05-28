@@ -28,12 +28,12 @@ window.addEventListener("DOMContentLoaded", () => {
     var count = 0;
     var imagesContainerElement =  document.getElementById("images-container");
     imagesContainerElement.addEventListener("click", function(event){
-        console.log("click to try",event);
-        console.log(event.target.className);
+        // console.log("click to try",event);
+        // console.log(event.target.className);
         if (event.target.className === "backImage"){
             count++;
         }
-        console.log(count)
+        // console.log(count)
         var showCountNumber = document.getElementsByClassName("countNum")[0]
         showCountNumber.textContent = count;
     })
