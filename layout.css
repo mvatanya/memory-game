@@ -40,15 +40,15 @@ button {
   color: #CD5C5C;
 }
 
-.second-page {
+/* .second-page {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-#images-container {
-  /* border: 1px solid black; */
-  height: 100%;  
-}
+} */
+/* #images-container {
+  border: 1px solid black;
+  height: 100%; 
+} */
 
 .row {
   display: flex;
@@ -62,16 +62,45 @@ button {
   margin: 10px 20px;
   position: relative;
 }
-.backImage{
+/* .backImage{
   width: 100px;
   height: 150px;
-}
+} */
 .countNum {
   display: inline-block;
-  width: 100px;
-  height: 150px;
+  width: 100%;
+  height: 100%;
   font-size: 40px;
   text-align: center;
   position: absolute;
-  top: 50px;
+  top: 40%;
+}
+
+#second-page{
+  height: 100vh;
+  display: flex;
+}
+
+#cardsContainer{ 
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  border: 3px solid pink;
+  height: 95vh;
+  width: 80vh;
+}
+
+.memCards {
+  width: calc(20% - 10px);
+  height: calc(20% - 10px);
+  margin: 5px;
+  position: relative;
+}
+
+.frontImage,
+.backImage {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 5px;
 }
