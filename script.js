@@ -43,7 +43,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 frontImage.src = frontImageFiles[i];
                 var backImage = document.createElement("img");
                 backImage.className = "backImage";
-                backImage.src = "back-image.jpg"; 
+                backImage.src = "pinkcard.png"; 
                 memCards.appendChild(frontImage); 
                 memCards.appendChild(backImage); 
             }
@@ -53,10 +53,10 @@ window.addEventListener("DOMContentLoaded", () => {
     
     cardTiles();
     var count = 0;
-    var imagesContainerElement =  document.getElementById("images-container");
-    imagesContainerElement.addEventListener("click", function(event){
-        // console.log("click to try",event);
-        // console.log(event.target.className);
+    var cardsContainer =  document.getElementById("cardsContainer");
+    cardsContainer.addEventListener("click", function(event){
+        console.log("click to try",event);
+        console.log(event.target.className);
         if (event.target.className === "backImage"){
             count++;
         }
@@ -64,23 +64,9 @@ window.addEventListener("DOMContentLoaded", () => {
         var showCountNumber = document.getElementsByClassName("countNum")[0]
         showCountNumber.textContent = count;
     })
-    
+    var gifCards = document.querySelectorAll('.memCards');
+    function openCard(){
+        this.classList.toggle('open');
+    }
+    gifCards.forEach(gifCards => gifCards.addEventListener('click',openCard))
 })    
-
-
-// <!-- <div class="row">
-// <div class="column">
-//   <img src="gif-1.webp" alt="gif-1" style="width:100%">
-// </div>
-// <div class="column">
-//   <img src="gif-2.webp" alt="gif-2" style="width:100%">
-// </div>
-// <div class="column">
-//   <img src="gif-3.webp" alt="gif-3" style="width:100%">
-// </div>
-// <div class="column">
-//   <img src="gif-4.webp" alt="gif-4" style="width:100%">
-// </div>
-// <div class="column">
-//   <img src="gif-5.webp" alt="gif-5" style="width:100%">
-// </div> -->

@@ -74,6 +74,8 @@ button {
   text-align: center;
   position: absolute;
   top: 40%;
+  font-family: monospace;
+  color: #CD5C5C
 }
 
 #second-page{
@@ -85,9 +87,10 @@ button {
   margin: auto;
   display: flex;
   flex-wrap: wrap;
-  border: 3px solid pink;
+  /* border: 5px solid pink; */
   height: 95vh;
   width: 80vh;
+  perspective: 1000px;
 }
 
 .memCards {
@@ -95,6 +98,14 @@ button {
   height: calc(20% - 10px);
   margin: 5px;
   position: relative;
+  transform-style: preserve-3d;
+  transition: transform .5s
+}
+.memCards:active {
+  transform:scale(.95);
+}
+.memCards.open{
+  transform: rotateY(180deg)
 }
 
 .frontImage,
@@ -102,5 +113,10 @@ button {
   width: 100%;
   height: 100%;
   position: absolute;
-  border-radius: 5px;
+  border-radius: 10px;
+  backface-visibility: hidden;
+}
+
+.frontImage {
+  transform: rotateY(180deg);
 }
