@@ -32,6 +32,7 @@ window.addEventListener("DOMContentLoaded", () => {
         for (var i = 0; i < 25; i++) {
             var memCards = document.createElement("div");
             memCards.className = "memCards" 
+            memCards.dataset.nameOfGif = frontImageFiles[i];
             if(i === 12){
                 var countNum = document.createElement("span");
                 countNum.className = "countNum";
@@ -50,13 +51,13 @@ window.addEventListener("DOMContentLoaded", () => {
         cardsContainer.appendChild(memCards);    
         }
     };
-    
     cardTiles();
+
     var count = 0;
     var cardsContainer =  document.getElementById("cardsContainer");
     cardsContainer.addEventListener("click", function(event){
-        console.log("click to try",event);
-        console.log(event.target.className);
+        // console.log("click to try",event);
+        // console.log(event.target.className);
         if (event.target.className === "backImage"){
             count++;
         }
@@ -64,9 +65,30 @@ window.addEventListener("DOMContentLoaded", () => {
         var showCountNumber = document.getElementsByClassName("countNum")[0]
         showCountNumber.textContent = count;
     })
+
     var gifCards = document.querySelectorAll('.memCards');
+    var alreadyOpenedCard = false;
+    var firstCard;
+    var secondCard;
     function openCard(){
-        this.classList.toggle('open');
+        this.classList.add('open');
+
+        if (!alreadyOpenedCard){
+            alreadyOpenedCard = true;
+            firstCard = this;
+        } else {
+            alreadyOpenedCard = false;
+            secondCard = this;
+            if (firstCard.dataset.nameOfGif === secondCard.dataset.nameOfGif){
+                firstCard.removeEventListener('click', openCard);
+                secondCard.removeEventListener('click', openCard);
+            } else {
+                setTimeout(() => {
+                    firstCard.classList.remove('open');
+                    secondCard.classList.remove('open')
+                }, 1500);
+            }
+        }
     }
     gifCards.forEach(gifCards => gifCards.addEventListener('click',openCard))
 })    
