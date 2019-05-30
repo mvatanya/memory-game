@@ -6,7 +6,7 @@ body {
   min-height: 100vh;
 }
 .first-page {
-  background-color: #CD5C5C;
+  background-color: #ffd3d2;
   font-family: 'Press Start 2P', serif;
   text-align: center; 
   color: white;
@@ -37,35 +37,18 @@ button {
   font-size: 20px;
   font-family: 'Press Start 2P', serif;
   padding: 15px 32px;
-  color: #CD5C5C;
+  color: #ffbab9;
 }
-
-/* .second-page {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
-/* #images-container {
-  border: 1px solid black;
-  height: 100%; 
-} */
-
 .row {
   display: flex;
   height: 20%;
-
 }
 .column {
   flex: 20%;
   padding: 5px;
-  /* background-color: red; */
   margin: 10px 20px;
   position: relative;
 }
-/* .backImage{
-  width: 100px;
-  height: 150px;
-} */
 .countNum {
   display: inline-block;
   width: 100%;
@@ -75,14 +58,12 @@ button {
   position: absolute;
   top: 40%;
   font-family: monospace;
-  color: #CD5C5C
+  color: #ffbab9
 }
-
 #second-page{
   height: 100vh;
   display: flex;
 }
-
 #cardsContainer{ 
   margin: auto;
   display: flex;
@@ -92,14 +73,17 @@ button {
   width: 80vh;
   perspective: 1000px;
 }
-
 .memCards {
   width: calc(20% - 10px);
   height: calc(20% - 10px);
   margin: 5px;
   position: relative;
   transform-style: preserve-3d;
-  transition: transform .5s
+  transition: transform .5s; */
+}
+.memCards.countCard {
+  margin: auto;
+  position: relative;
 }
 .memCards:active {
   transform:scale(.95);
@@ -120,3 +104,4 @@ button {
 .frontImage {
   transform: rotateY(180deg);
 }
+
