@@ -1,6 +1,6 @@
 window.addEventListener("DOMContentLoaded", () => {
 
-    function cardTiles(){
+    (function cardTiles(){
         var frontImageFiles = ["gif-1.webp","gif-1.webp","gif-2.webp","gif-2.webp","gif-3.webp","gif-3.webp","gif-4.webp","gif-4.webp","gif-5.webp","gif-5.webp","gif-6.webp","gif-6.webp","","gif-7.webp","gif-7.webp","gif-8.webp","gif-8.webp","gif-9.webp","gif-9.webp","gif-10.webp","gif-10.webp","gif-11.webp","gif-11.webp","gif-12.webp","gif-12.webp"];
         var cardsContainer = document.getElementById("cardsContainer");
         for (var i = 0; i < 25; i++) {
@@ -25,8 +25,7 @@ window.addEventListener("DOMContentLoaded", () => {
             }
         cardsContainer.appendChild(memCards);    
         }
-    };
-    cardTiles();
+    })();
 
     var count = 0;
     var cardsContainer =  document.getElementById("cardsContainer");
@@ -46,6 +45,7 @@ window.addEventListener("DOMContentLoaded", () => {
     var firstCard;
     var secondCard;
     var stopOpenThirdCard = false;
+    var countOpenedCard = 0;
     function openCard(){
         //to prevent the middle card to change
         if(this.dataset.nameOfGif===""){
@@ -72,6 +72,8 @@ window.addEventListener("DOMContentLoaded", () => {
                 firstCard.removeEventListener('click', openCard);
                 secondCard.removeEventListener('click', openCard);
                 stopOpenThirdCard = false;
+                countOpenedCard += 1;
+                console.log(countOpenedCard);
             } else {
                 stopOpenThirdCard = true;
                 setTimeout(() => {
@@ -87,8 +89,13 @@ window.addEventListener("DOMContentLoaded", () => {
                 
             }
         }
+        if (countOpenedCard === 12){
+            setTimeout(() => {
+                restartPage();
+            },500)    
+        }
     }
- //an imidiately invoked function expression (= this function will be executed as soon as it is defined )   
+ //an immidiately invoked function expression (= this function will be executed as soon as it is defined )   
     (function shuffleCards() {
         var randomArr = []
         for (var a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24], i = a.length; i--; ) {
@@ -104,6 +111,16 @@ window.addEventListener("DOMContentLoaded", () => {
         gifCards[12].style.order = 12;
         gifCards[randomArr.indexOf(12)].style.order = temp;
     })();
+    function restartPage(){
+        //var restartButton = document.createElement("script");      
+        if(confirm("Congratulations! You completed the woof woof challenge! \nDo you want to restart the game??")){
+            location.reload();
 
+        } else {
+            return;
+        }
+
+        }
+    
     gifCards.forEach(card => card.addEventListener('click',openCard))
 })    
