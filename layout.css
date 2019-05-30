@@ -68,7 +68,6 @@ button {
   margin: auto;
   display: flex;
   flex-wrap: wrap;
-  /* border: 5px solid pink; */
   height: 95vh;
   width: 80vh;
   perspective: 1000px;
@@ -79,11 +78,7 @@ button {
   margin: 5px;
   position: relative;
   transform-style: preserve-3d;
-  transition: transform .5s; */
-}
-.memCards.countCard {
-  margin: auto;
-  position: relative;
+  transition: transform .5s;
 }
 .memCards:active {
   transform:scale(.95);

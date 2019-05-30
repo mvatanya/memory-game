@@ -8,7 +8,6 @@ window.addEventListener("DOMContentLoaded", () => {
             memCards.className = "memCards" 
             memCards.dataset.nameOfGif = frontImageFiles[i];
             if(i === 12){
-                memCards.classList.add("countCard");
                 var countNum = document.createElement("span");
                 countNum.className = "countNum";
                 countNum.textContent = 0;
@@ -35,7 +34,6 @@ window.addEventListener("DOMContentLoaded", () => {
         if (event.target.className === "backImage"){
             count++;
         }
-        // console.log(count)
         var showCountNumber = document.getElementsByClassName("countNum")[0]
         showCountNumber.textContent = count;
     })
@@ -102,17 +100,14 @@ window.addEventListener("DOMContentLoaded", () => {
             var random = a.splice(Math.floor(Math.random() * (i + 1)), 1)[0];
             randomArr.push(random)
         }        
-        // console.log(randomArr);
         for (var i = 0; i < 25; i++) {
             gifCards[i].style.order = randomArr[i];
-            //console.log(gifCards[i].style.order);
             }
         var temp = gifCards[12].style.order;
         gifCards[12].style.order = 12;
         gifCards[randomArr.indexOf(12)].style.order = temp;
     })();
     function restartPage(){
-        //var restartButton = document.createElement("script");      
         if(confirm("Congratulations! You completed the woof woof challenge! \nDo you want to restart the game??")){
             location.reload();
 
