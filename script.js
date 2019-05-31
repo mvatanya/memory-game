@@ -1,5 +1,6 @@
 window.addEventListener("DOMContentLoaded", () => {
-
+    var lowestScore = document.getElementById("score")
+    lowestScore.textContent = localStorage.getItem('lowestScore');
     (function cardTiles(){
         var frontImageFiles = ["gif-1.webp","gif-1.webp","gif-2.webp","gif-2.webp","gif-3.webp","gif-3.webp","gif-4.webp","gif-4.webp","gif-5.webp","gif-5.webp","gif-6.webp","gif-6.webp","","gif-7.webp","gif-7.webp","gif-8.webp","gif-8.webp","gif-9.webp","gif-9.webp","gif-10.webp","gif-10.webp","gif-11.webp","gif-11.webp","gif-12.webp","gif-12.webp"];
         var cardsContainer = document.getElementById("cardsContainer");
@@ -71,7 +72,6 @@ window.addEventListener("DOMContentLoaded", () => {
                 secondCard.removeEventListener('click', openCard);
                 stopOpenThirdCard = false;
                 countOpenedCard += 1;
-                console.log(countOpenedCard);
             } else {
                 stopOpenThirdCard = true;
                 setTimeout(() => {
@@ -89,6 +89,16 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         if (countOpenedCard === 12){
             setTimeout(() => {
+                var lowestScorefromLocalStorage = localStorage.getItem('lowestScore')
+                var newLowestScore = 0;
+                if (count < lowestScorefromLocalStorage){
+                    newLowestScore = count;
+                } else {
+                    newLowestScore = lowestScorefromLocalStorage
+                }
+                var lowestScoreElement = document.getElementById("score")
+                lowestScoreElement.textContent = newLowestScore;
+                localStorage.setItem('lowestScore',newLowestScore);
                 restartPage();
             },500)    
         }
